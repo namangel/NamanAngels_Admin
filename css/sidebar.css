@@ -50,6 +50,17 @@ ul{
     color: white;
 }
 
-.sub{
+#sub{
     display:none;
+}
+.subli{
+    background-color: #114b6e;
+}
+
+.butn{
+    width: 100%;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
 }
