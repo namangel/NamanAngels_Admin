@@ -1,0 +1,31 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.contain{
+    display: grid;
+    grid-template-columns: 25%,75%;
+}
+.side{
+    grid-column: 1;
+}
+.main{
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.a1{
+    grid-column: 1; 
+}
+.a2{
+    grid-column: 2; 
+}
+.a3{
+    grid-column: 3; 
+}
+.top{
+    background-color: #0A2B40;
+    padding: 20px;
+    color: white;
+    margin: 20px;
+}
