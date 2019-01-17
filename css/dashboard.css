@@ -13,6 +13,7 @@ body{
     grid-column: 2;
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
 }
 .a1{
     grid-column: 1; 
@@ -23,9 +24,21 @@ body{
 .a3{
     grid-column: 3; 
 }
-.top{
+.left{
     background-color: #0A2B40;
     padding: 20px;
     color: white;
-    margin: 20px;
+    float: left;
+    height: 110px;
+}
+.right{
+    background-color: white;
+    padding: 20px;
+    float: right;
+    width: 10px;
+    border-right:5px solid #00b8e6; 
+    height: 110px;
+}
+.num{
+    font-size: 22pt;
 }

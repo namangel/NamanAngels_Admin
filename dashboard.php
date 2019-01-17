@@ -6,23 +6,26 @@
     <div class="contain">
         <div class="side"><?php require "sidebar.php" ?></div>
         <div class="main">
-            <div class="top a1">
-                <center>
-                    <h3>Today</h3><br>
-                    <h1>USERS</h1>
-                </center>
+            <div class="a1">
+                <div class="left">
+                    <h4>Today</h4>
+                    <h2>USERS</h2>
+                </div>
+                <div class="right"><span class="num">1</span></div>
             </div>
-            <div class="top a2">
-                <center>
-                    <h3>Today</h3><br>
-                    <h1>VISITED</h1>
-                </center>
+            <div class="a2">
+                <div class="left">
+                    <h4>Today</h4>
+                    <h2>VISITED</h2>
+                </div>
+                <div class="right"><span class="num">1</span></div>
             </div>
-            <div class="top a3">
-                <center>
-                    <h3>Today</h3><br>
-                    <h1>REVENUE</h1>
-                </center>
+            <div class="a3">
+                <div class="left">
+                    <h4>Today</h4>
+                    <h2>ONLINE REVENUE</h2>
+                </div>
+                <div class="right"><span class="num">1</span></div>
             </div>
         </div>
     </div>
