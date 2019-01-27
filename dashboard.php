@@ -4,7 +4,7 @@
 </head>
 <body>
     <div class="contain">
-        <div class="side"><?php require "sidebar.php" ?></div>
+        <div class="side"><?php require "testside.php" ?></div>
         <div class="main">
             <div class="a1">
                 <div class="left">

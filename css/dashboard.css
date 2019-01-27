@@ -3,19 +3,23 @@ body{
     padding: 0px;
 }
 .contain{
-    display: grid;
-    grid-template-columns: 25%,75%;
+    /* display: grid;
+    grid-template-columns: 25%,75%; */
 }
 .side{
-    grid-column: 1;
+    /* grid-column: 1; */
+    width: 25%;
+    float:left;
 }
 .main{
-    grid-column: 2;
+    /* grid-column: 2;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 20px;
+    grid-gap: 20px; */
+    width:75%;
+    float:left;
 }
-.a1{
+/* .a1{
     grid-column: 1; 
 }
 .a2{
@@ -41,4 +45,4 @@ body{
 }
 .num{
     font-size: 22pt;
-}
+} */
