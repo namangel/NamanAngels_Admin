@@ -69,6 +69,7 @@ $(function () {
 
   }());
 
+  //not required
   // Start chart
 
   var chart = document.getElementById('myChart');

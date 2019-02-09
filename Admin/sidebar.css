@@ -23,9 +23,7 @@ body {background-color: #2a2b3d}
   margin-left: 290px;
   background-color: #2a2b3d;
 }
-.margin {
-  margin-left: 0 !important;
-}
+
 /* Start side navigation bar  */
 
 .side-nav {
@@ -126,8 +124,6 @@ body {background-color: #2a2b3d}
   color: #FFF;
   padding: 0px 5px
 }
-.dang {background-color: #f35959}
-.prim {background-color: #0275d8}
 .succ {background-color: #5cb85c}
 /* End num */
 .side-nav .categories > li > a:hover {
@@ -190,180 +186,6 @@ body {background-color: #2a2b3d}
 }
 
 /* End side navigation bar  */
-/* Start welcome */
-
-.welcome {
-  color: #CCC;
-}
-.welcome .content {
-  background-color: #313348;
-  padding: 15px;
-  margin-top: 25px;
-}
-.welcome h2 {
-  font-family: Calibri;
-  font-weight: 100;
-  margin-top: 0
-}
-.welcome p {
-  color: #999;
-}
-
-
-/* Start statistics */
-.statistics {
-  margin-top: 25px;
-  color: #CCC;
-}
-.statistics .box {
-  background-color: #313348;
-  padding: 15px;
-  overflow: hidden;
-}
-.statistics .box > i {
-  float: left;
-  color: #FFF;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  font-size: 22px;
-}
-.statistics .box .info {
-  float: left;
-  width: auto;
-  margin-left: 10px;
-}
-.statistics .box .info h3 {
-  margin: 5px 0 5px;
-  display: inline-block;
-}
-.statistics .box .info p {color:#BBB}
-
-/* End statistics */
-/* Start charts */
-.charts {
-  margin-top: 25px;
-  color: #BBB
-}
-.charts .chart-container {
-  background-color: #313348;
-  padding: 15px;
-}
-.charts .chart-container h3 {
-  margin: 0 0 10px;
-  font-size: 17px;
-}
-
-/* Start users */
-
-.admins {
-  margin-top: 25px;
-}
-.admins .box {
-
-}
-.admins .box > h3 {
-  color: #ccc;
-  font-family: Calibri;
-  font-weight: 300;
-  margin-top: 0;
-}
-.admins .box .admin {
-  margin-bottom: 20px;
-  overflow: hidden;
-  background-color: #313348;
-  padding: 10px;
-}
-.admins .box .admin .img {
-  width: 20%;
-  margin-right: 5%;
-  float: left;
-}
-.admins .box .admin .img img {
-  border-radius: 50%;
-}
-.admins .box .info {
-  width: 75%;
-  color: #EEE;
-  float: left;
-}
-.admins .box .info h3 {font-size: 19px}
-.admins .box .info p {color: #BBB}
-
-/* End users */
-/* Start statis */
-
-.statis {
-  color: #EEE;
-  margin-top: 15px;
-}
-.statis .box {
-  position: relative;
-  padding: 15px;
-  overflow: hidden;
-  border-radius: 3px;
-  margin-bottom: 25px;
-}
-.statis .box h3:after {
-  content: "";
-  height: 2px;
-  width: 70%;
-  margin: auto;
-  background-color: rgba(255, 255, 255, 0.12);
-  display: block;
-  margin-top: 10px;
-}
-.statis .box i {
-  position: absolute;
-  height: 70px;
-  width: 70px;
-  font-size: 22px;
-  padding: 15px;
-  top: -25px;
-  left: -25px;
-  background-color: rgba(255, 255, 255, 0.15);
-  line-height: 60px;
-  text-align: right;
-  border-radius: 50%;
-}
-
-/*chart*/
-.chrt3 {
-  padding-bottom: 50px;
-}
-.chrt3 .chart-container {
-  height: 350px;
-  padding: 15px;
-  margin-top: 25px;
-}
-.chrt3 .box {
-  padding: 15px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.main-color {
-  color: #ffc107
-}
-.warning {background-color: #f0ad4e}
-.danger {background-color: #d9534f}
-.success {background-color: #5cb85c}
-.inf {background-color: #5bc0de}
-
-
-/* كمية الإمبورتات دى علشان البوتستراب تبطل غتاته وتسيب العناصر اللى متعدله فى حالها طبعا الكلام ده فى كود بن بس */
-
 /* Start bootstrap */
 .navbar-right .dropdown-menu {
   right: auto !important;
@@ -430,9 +252,6 @@ body {background-color: #2a2b3d}
 .navbar-default .navbar-nav>li>a>i {
   font-size: 18px !important;
 }
-
-
-
 
 /* Start media query */
 
