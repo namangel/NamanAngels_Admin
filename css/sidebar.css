@@ -1,14 +1,49 @@
-body{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
 }
+.sidebar {
+  width: 20%;
+  z-index: 1;
+  background-color: #0A2B40;
+  position: absolute;
+}
+
 .container{
     box-shadow: 2px 0px 8px 0px #888888; 
 }
 
-a{
-    text-decoration: none;
+.closebtn{
+    background-color: #0A2B40;
+    color: white;
+    margin-top: 10px;
+    position: relative;
+    float: right;
+    font-size: 35px;
 }
+
+.closebtn:hover {
+  background-color: #444;
+}
+
+.openbtn {
+  font-size: 35px;
+  cursor: pointer;
+  background-color: #0A2B40;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+.font{
+    font-size: 22px;
+}
+
+
 ul{
     list-style: none;
     padding-left: 0;
@@ -23,6 +58,7 @@ ul{
     height: 15%;
     text-align: center;
     padding-top: 10px;
+    padding-bottom: 30px;
 }
 
 .name,.desig{
@@ -30,13 +66,17 @@ ul{
 }
 
 .icon i{
+    color: black;
     font-size: 30px;
     padding: 5px;
 }
 
 .prof{
+    background-color:  white;
     height: 25%;
     padding: 20px;
+    transition: 0.5s;
+    border: 1px solid black;
 }
 
 .list li{
@@ -46,6 +86,7 @@ ul{
 }
 .list a{
     color: white;
+    text-decoration: none;
 }
 
 #sub{

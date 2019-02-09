@@ -7,6 +7,10 @@
                 margin: 0px;
                 padding: 0px;
             }
+            .container{
+                margin-left: 20%;
+                padding: 5px;
+            }
             .outer{
                 width: 50%;
                 float: left;
@@ -27,14 +31,13 @@
                 background-color: #00b8e6;
                 border: none;
                 color: white;
+                padding: 10px;
+
             }
-            .butn{
-                float:left;
-                width: 50%;
-            }
+            
             .butn button{
-                width: 50%;
                 border: none;
+                width: 40%;
                 background: #0A2B40;
                 color: white;
                 cursor: pointer;
@@ -53,48 +56,48 @@
         </style>
     </head>
     <body>
-        <div class="content">
-            <h3>Manage your team</h3>
-        </div>
-        <div class="butn">
-            <center>
-            <button onclick="f1on()">ADD A TEAM MEMBER</button>
-            </center>
-        </div>
-        <div class="butn">
-            <center>
+        <div><?php require "sidebar.php" ?></div>
+        
+        <div class="container">
+            <div class="content">
+                <h3>Manage your team</h3>
+            </div>
+            <div class="butn">
+                <center>
+                <button onclick="f1on()">ADD A TEAM MEMBER</button>
                 <button onclick="f2on()">REMOVE A TEAM MEMBER</button>
-            </center>
-        </div>
-        <div class="outer" id="f1">
-            <center>
-            <div class="teamform">
-                    <i class="fa fa-close cross" onclick="f1off()"></i><br>
-                    <form method="POST">
-                        <label>Member Name:</label><br>
-                        <input type="text" name="mem_name"><br><br>
-                        <label>Member Designation/Description:</label><br>
-                        <input type="text" name="mem_desc"><br><br>
-                        <label>Member's LinkedIn:</label><br>
-                        <input type="text" name="mem_link"><br><br>
-                        <label>Member Profile Image:</label><br>
-                        <input type="file" name="mem_img"><br><br>
-                        <input type="submit" name="addmem">
-                    </form>
+                </center>
             </div>
-            </center>
-        </div>
-        <div class="outer" id="f2">
-            <center>
-            <div class="teamform">
-                    <i class="fa fa-close cross" onclick="f2off()"></i><br>
-                    <form method="POST">
-                        <label>Member Name:</label><br>
-                        <input type="text" name="mem_name"><br><br>
-                        <input type="submit" name="delmem">
-                    </form>
+            <div class="outer" id="f1">
+                <center>
+                <div class="teamform">
+                        <i class="fa fa-close cross" onclick="f1off()"></i><br>
+                        <form method="POST">
+                            <label>Member Name:</label><br>
+                            <input type="text" name="mem_name"><br><br>
+                            <label>Member Designation/Description:</label><br>
+                            <input type="text" name="mem_desc"><br><br>
+                            <label>Member's LinkedIn:</label><br>
+                            <input type="text" name="mem_link"><br><br>
+                            <label>Member Profile Image:</label><br>
+                            <input type="file" name="mem_img"><br><br>
+                            <input type="submit" name="addmem">
+                        </form>
+                </div>
+                </center>
             </div>
-            </center>
+            <div class="outer" id="f2">
+                <center>
+                <div class="teamform">
+                        <i class="fa fa-close cross" onclick="f2off()"></i><br>
+                        <form method="POST">
+                            <label>Member Name:</label><br>
+                            <input type="text" name="mem_name"><br><br>
+                            <input type="submit" name="delmem">
+                        </form>
+                </div>
+                </center>
+            </div>
         </div>
         <!-- <div class="display"></div> -->
     </body>

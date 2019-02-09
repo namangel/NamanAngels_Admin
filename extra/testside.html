@@ -5,15 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script>
-    function openNav() {
-      document.getElementById("new_sidebar").style.display= "none";
-      document.getElementById("mySidebar").style.display= "block";
-    }
-    
-    function closeNav() {
-      document.getElementById("new_sidebar").style.display= "block";
-      document.getElementById("mySidebar").style.display= "none";
-    }
     function on(){
             document.getElementById("down").style.display = "none";
             document.getElementById("sub").style.display = "block";
@@ -22,14 +13,6 @@
             document.getElementById("down").style.display = "block";
             document.getElementById("sub").style.display = "none";
     }
-    function on_new(){
-            document.getElementById("down_new").style.display = "none";
-            document.getElementById("new_sub").style.display = "block";
-    }
-    function off_new(){
-            document.getElementById("down_new").style.display = "block";
-            document.getElementById("new_sub").style.display = "none";
-        }
 </script>       
 <style>
 * {
@@ -37,14 +20,10 @@
     padding: 0;
 }
 .sidebar {
-  /* width: 25%; */
+  width: 100%;
   z-index: 1;
-  /* top: 0;
-  left: 0; */
   background-color: #0A2B40;
-  /* overflow-x: hidden;  */
-  transition: 0.5s;
-  padding-top: 10px;
+  position: fixed;
 }
 
 .container{
@@ -57,9 +36,7 @@
     margin-top: 10px;
     position: relative;
     float: right;
-    /* left: 250px; */
     font-size: 35px;
-    /* margin-left: 50px; */
 }
 
 .closebtn:hover {
@@ -83,11 +60,6 @@
     font-size: 20px;
 }
 
-/* #main {
-  transition: margin-left .5s;
-  padding: 5px;
-  margin-left: 20%;
-} */
 
 ul{
     list-style: none;
@@ -148,40 +120,11 @@ ul{
     color: white;
     cursor: pointer;
 }
-
-.new_sidebar{
-    display: none;
-    /* width: 0;
-    position: absolute; */
-    z-index: 1;
-    /* top: 0;
-    left: 0; */
-    background-color: #0A2B40;
-    /* overflow-x: hidden;  */
-    transition: 0.15s;
-    align-content: center;
-}
-.new_navbar i{
-    font-size: 25px;
-    padding: 2px;
-}
-#new_sub{
-    display:none;
-}
-.new_subli{
-    background-color: #114b6e;
-}
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-/* @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-} */
 </style>
 </head>
 <body>
 
 <div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-close"></i></a>
   <div class="container">
         <div class="color nam"><h1>Naman Angels</h1></div>
         <div class="prof font">
@@ -205,7 +148,7 @@ ul{
                 </li>
                 <div id="sub" class="font">
                 <li><button onclick="off()" class="butn font"><i class="fa fa-address-book-o"></i>&nbsp;&nbsp;View Profiles
-                    <i class="fa fa-angle-down" style="float:right;"></i></button>
+                    <i class="fa fa-angle-up" style="float:right;"></i></button>
                 </li>
                 <a href="#"><li class="subli font"><i class="fa fa-rocket"></i>&nbsp;&nbsp;Startup</li></a>
                 <a href="#"><li class="subli font"><i class="fa fa-money"></i>&nbsp;&nbsp;Investor</li></a>
@@ -215,41 +158,5 @@ ul{
         </div>
     </div>
 </div>
-
-<!-- new nav -->
-
-</div>
-
-  <div class="new_sidebar" id="new_sidebar">
-        <center><button class="openbtn" onclick="openNav()"><i class="fa fa-navicon"></i></button></center>
-        <div class="prof">
-            <center>
-            <div class="icon">
-                <a href="#"><i class="fa fa-user"></i></a>
-                <a href="#"><i class="fa fa-cog"></i></a>
-                <a href="#"><i class="fa fa-power-off"></i></a>
-            </div>
-            </center>
-        </div>
-        <div class="color new_navbar">
-            <ul class="list">
-                <a href="#" title="Dashboard"><li><i class="fa fa-dashboard"></i></li></a>
-                <a href="#" title="Register"><li><i class="fa fa-registered"></i></li></a>
-                <a href="#" title="Inbox"><li><i class="fa fa-envelope-o"></i></li></a>
-                <li id="down_new"><a onclick="on_new()" class="butn" title="View profile"><i class="fa fa-address-book-o"></i>
-                    <i class="fa fa-angle-down" style="float:right;"></i></a>
-                </li>
-                <div id="new_sub">
-                <li><a onclick="off_new()" title="View profile" ><i class="fa fa-address-book-o"></i> 
-                    <i class="fa fa-angle-down" style="float:right;"></i></a>
-                </li>
-                <a href="#" title="Startup"><li class="new_subli"><i class="fa fa-rocket"></i></li></a> 
-                <a href="#" title="Investor"><li class="new_subli"><i class="fa fa-money"></i></li></a> 
-                </div>
-                <li><a href="#" title="Services"><i class="fa fa-cog"></i></a></li> 
-            </ul>
-        </div>
-    </div> 
-
 </body>
 </html> 
