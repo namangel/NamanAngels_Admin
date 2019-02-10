@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
     <link rel="stylesheet" href="admin.css"> 
@@ -56,41 +56,7 @@
       .welcome p {
         color: #999;
       }
-
-
-      /* Start statistics */
-      .statistics {
-        margin-top: 25px;
-        color: #CCC;
-      }
-      .statistics .box {
-        background-color: #313348;
-        padding: 15px;
-        overflow: hidden;
-      }
-      .statistics .box > i {
-        float: left;
-        color: #FFF;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        line-height: 60px;
-        font-size: 22px;
-      }
-      .statistics .box .info {
-        float: left;
-        width: auto;
-        margin-left: 10px;
-      }
-      .statistics .box .info h3 {
-        margin: 5px 0 5px;
-        display: inline-block;
-      }
-      .statistics .box .info p {color:#BBB}
-
-      /* End statistics */
-
-      /* Start users */
+   /* Start users */
 
       .admins {
         margin-top: 25px;
@@ -127,7 +93,7 @@
       .admins .box .info p {color: #BBB}
 
       /* End users */
-      /* Start statis */
+      /* Start statis (views and registered number box css)*/
 
       .statis {
         color: #EEE;
@@ -308,7 +274,7 @@
               <div class="box success">
                 <i class="fa fa-handshake-o"></i>
                 <h3>5,154</h3>
-                <p class="lead">Transactions</p>
+                <p class="lead">Downloads</p>
               </div>
             </div>
           </div>
@@ -351,7 +317,7 @@
             </div>
             <div class="col-md-6">
               <div class="box">
-                <h3>Moderators:</h3>
+                <h3>Team Members:</h3>
                 <div class="admin">
                   <div class="img">
                     <img class="img-responsive" src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907114/small/1501685404/enhance" alt="admin">
@@ -389,5 +355,6 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
       <script src='admin.js'></script>
+      <script src='sidebar.js'></script>
       </body>
     </html>

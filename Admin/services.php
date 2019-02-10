@@ -8,8 +8,9 @@
                 padding: 0px;
             }
             .container{
-                margin-left: 20%;
-                padding: 5px;
+                margin-right:50%;
+                padding: 20px;
+               float:right;
             }
             .outer{
                 width: 50%;
@@ -41,13 +42,16 @@
                 background: #0A2B40;
                 color: white;
                 cursor: pointer;
-                margin: 50px 10px;
+                margin: 40px 10px;
                 padding: 20px;
+                
             }
             .content{
                 text-align: center;
                 background-color: #00b8e6;
                 padding: 20px;
+                margin-left:-350px;
+                width:auto;
             }
             .cross{
                 float: right;
@@ -58,7 +62,7 @@
     <body>
         <div><?php require "sidebar.php" ?></div>
         
-        <div class="container">
+           <div class="container">
             <div class="content">
                 <h3>Manage your team</h3>
             </div>

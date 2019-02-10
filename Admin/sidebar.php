@@ -26,12 +26,12 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
-body {background-color: #2a2b3d}
+body {background-color: white;}
 #contents {
   position: relative;
   transition: .3s;
   margin-left: 290px;
-  background-color: #2a2b3d;
+  background-color:#5c98f2;
 }
 
 /* Start side navigation bar  */
@@ -294,7 +294,7 @@ body {background-color: #2a2b3d}
         <h2>Naman Angels</h2><br>
         <img src="ProfilePic.png" alt="No image">
         <div class="info">
-          <h3><a href="#">Admin</a></h3>
+          <h3><a href="admin.php">Admin</a></h3>
           <p>Lorem ipsum dolor sit amet consectetur.</p>
         </div>
       </div>
@@ -351,14 +351,14 @@ body {background-color: #2a2b3d}
         <li><i class="fa fa-envelope-open-o fa-fw"></i><a href="#"> Inbox <span class="num dang">56</span></a></li>
         <li><i class="fa fa-wrench fa-fw"></i><a href="#"> Settings </span></a>
           <ul class="side-nav-dropdown">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">ipsum dolor</a></li>
+            <li><a href="services.php">Add Team Member</a></li>
+            <li><a href="changepassword.php">Change password</a></li>
             <li><a href="#">dolor ipsum</a></li>
             <li><a href="#">amet consectetur</a></li>
             <li><a href="#">ipsum dolor sit</a></li>
           </ul>
         </li>
-        <li><i class="fa fa-laptop fa-fw"></i><a href="#"> About UI &amp; UX <span class="num succ">43</span></a></li>
+     
         <li><i class="fa fa-comments-o fa-fw"></i><a href="#"> Something else</a></li>
       </ul>
     </aside>
@@ -383,9 +383,9 @@ body {background-color: #2a2b3d}
                   <li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
                 </ul>
               </li>
-              <li><a href="#"><i class="fa fa-comments"></i><span>23</span></a></li>
+           <!--   <li><a href="#"><i class="fa fa-comments"></i><span>23</span></a></li>
               <li><a href="#"><i class="fa fa-bell-o"></i><span>98</span></a></li>
-              <li><a href="#"><i data-show="show-side-navigation1" class="fa fa-bars show-side-btn"></i></a></li>
+              <li><a href="#"><i data-show="show-side-navigation1" class="fa fa-bars show-side-btn"></i></a></li>-->
             </ul>
           </div>
         </div>

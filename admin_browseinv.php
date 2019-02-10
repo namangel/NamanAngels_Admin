@@ -1,8 +1,8 @@
 <?php
  $username = "root";
  $password = "";
- $host = "localhost:3307";
-$connect=mysqli_connect("localhost:3307","root","")or die("cant connect to server");
+ $host = "localhost";
+$connect=mysqli_connect("localhost","root","")or die("cant connect to server");
 $select_db=mysqli_select_db($connect,'dummydata') or die("couldnt conect to database");
 if(isset($_POST['submit']))
 {
