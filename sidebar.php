@@ -292,7 +292,7 @@ body {background-color: #2a2b3d;}
       <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
       <div class="heading">
         <h2>Naman Angels</h2><br>
-        <img src="ProfilePic.png" alt="No image">
+        <img src="img/ProfilePic.png" alt="No image">
         <div class="info">
           <h3><a href="admin.php">Admin</a></h3>
           <p>Lorem ipsum dolor sit amet consectetur.</p>
