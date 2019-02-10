@@ -60,7 +60,7 @@
       .outer{
         width: 50%;
         float: left;
-        display: none;
+        visibility: hidden;
         }
         .teamform{
         background-color: #ccc4d4;
@@ -164,21 +164,21 @@
       <!-- <script src='js/dashboard.js'></script> -->
       <script>
           function f1on(){
-            document.getElementById("f1").style.display = "block";
+            document.getElementById("f1").style.visibility = "visible";
         }
         function f1off(){
-            document.getElementById("f1").style.display = "none";
+            document.getElementById("f1").style.visibility = "hidden";
         }
         function f2on(){
-            if(document.getElementById("f1").style.display === 'none')
-            {
-                document.getElementById("f1").removeAttribute("style","display:none;");
-                document.getElementById("f1").setAttribute("style","visibility:hidden;");   
-            }
-            document.getElementById("f2").style.display = "block";
+            // if(document.getElementById("f1").style.display === 'none')
+            // {
+            //     document.getElementById("f1").removeAttribute("style","display:none;");
+            //     document.getElementById("f1").setAttribute("style","visibility:hidden;");   
+            // }
+            document.getElementById("f2").style.visibility = "visible";
         }
         function f2off(){
-            document.getElementById("f2").style.display = "none";
+            document.getElementById("f2").style.visibility = "hidden";
         }
       </script>
       </body>
