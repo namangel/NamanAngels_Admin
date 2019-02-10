@@ -66,7 +66,7 @@
         background-color: #ccc4d4;
         float: center;
         border: 2px solid black;
-        margin: 50px;
+        margin-top: 10px;
         padding: 20px;
         width: 60%;
         }

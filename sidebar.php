@@ -196,6 +196,10 @@ body {background-color: #2a2b3d;}
 }
 
 /* End side navigation bar  */
+
+.main-color {
+        color: #ffc107;
+      }
 /* Start bootstrap */
 .navbar-right .dropdown-menu {
   right: auto !important;
