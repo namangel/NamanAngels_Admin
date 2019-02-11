@@ -323,7 +323,7 @@ body {background-color: #2a2b3d;}
             <li><a href="#">Investors</a></li>
           </ul>
         </li>
-        <li><i class="fa fa-handshake-o fa-fw"></i><a href="#"> Deals </a></li>
+        <li><i class="fa fa-handshake-o fa-fw"></i><a href="transaction.php"> Deals </a></li>
         <!-- <li><i class="fa fa-envelope-open-o fa-fw"></i><a href="#"> Inbox <span class="num dang">56</span></a></li> -->
         <!-- <li><i class="fa fa-wrench fa-fw"></i><a href="#"> Settings </span></a>
         </li> -->
