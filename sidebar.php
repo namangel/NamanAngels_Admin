@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Sidebar</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
@@ -343,7 +342,7 @@ body {background-color: #2a2b3d;}
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My profile <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href=#><i class="fa fa-user fw"></i> My account</a></li>
+                  <li><a href="profile.php"><i class="fa fa-user fw"></i> My account</a></li>
                   <li><a href="changepassword.php"><i class="fa fa-lock fw"></i> Password</a></li>
                   <!-- <li><a href="#"><i class="fa fa-question-circle-o fw"></i> Help</a></li> -->
                   <li role="separator" class="divider"></li>
