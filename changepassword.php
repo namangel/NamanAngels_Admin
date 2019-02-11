@@ -7,8 +7,7 @@
 </head>
 <style>
     body {
-    margin: 0px;
-
+    margin: 0px; 
   }
 
   .wrapper {
