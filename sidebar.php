@@ -308,10 +308,10 @@ body {background-color: #2a2b3d;}
       <ul class="categories">
       <li><i class="fa fa-dashboard fa-fw"></i><a href="dashboard.php"> Dashboard</span></a>
         </li>
-        <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="#"> About us</a>
+        <!-- <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="#"> About us</a>
         </li>
         <li><i class="fa fa-phone fa-fw"></i><a href="#"> Contact us</a>
-        </li>
+        </li> -->
         <li><i class="fa fa-users fa-fw"></i><a href="#"> Our team</a>
           <ul class="side-nav-dropdown">
             <li><a href="#">View team</a></li>
@@ -324,9 +324,10 @@ body {background-color: #2a2b3d;}
             <li><a href="#">Investors</a></li>
           </ul>
         </li>
-        <li><i class="fa fa-envelope-open-o fa-fw"></i><a href="#"> Inbox <span class="num dang">56</span></a></li>
-        <li><i class="fa fa-wrench fa-fw"></i><a href="#"> Settings </span></a>
-        </li>
+        <li><i class="fa fa-handshake-o fa-fw"></i><a href="#"> Deals </a></li>
+        <!-- <li><i class="fa fa-envelope-open-o fa-fw"></i><a href="#"> Inbox <span class="num dang">56</span></a></li> -->
+        <!-- <li><i class="fa fa-wrench fa-fw"></i><a href="#"> Settings </span></a>
+        </li> -->
     </aside>
     <section id="contents">
       <nav class="navbar navbar-default">
