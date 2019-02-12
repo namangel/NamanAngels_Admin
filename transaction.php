@@ -1,5 +1,7 @@
 <html>
     <head>
+        <title>Transaction</title>
+        <link rel="stylesheet" href="css/transaction.css">
         <style>
             .cont{
                 margin-left: 290px;

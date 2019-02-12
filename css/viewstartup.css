@@ -1,14 +1,4 @@
-<?php require "server.php" ?>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Browse Startups</title>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="css/viewstartup.css">  -->
-<style>
-      * {
+* {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
@@ -68,9 +58,7 @@
       .admins {
         margin-top: 25px;
       }
-      .admins .box {
-
-      }
+    
       .admins .box > h3 {
         color: #ccc;
         font-family: Calibri;
@@ -173,93 +161,3 @@
         }
         .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {background-color: transparent !important}
       }
-    </style>
-    <html>
-    <body>
-    <?php require "sidebar.php" ?>
-    <div class="cont">
-      <?php
-      if (isset($_GET['pageno'])) {
-        $pageno = $_GET['pageno'];
-    }
-    else {
-        $pageno = 1;
-    }
-    
-    $sname="";
-    
-    $no_of_records_per_page = 3;
-    $offset = ($pageno - 1) * $no_of_records_per_page;
-   
-    
-    
-    $total_pages_sql = "SELECT COUNT(*) FROM Profile where StpName LIKE '%{$sname}%'";
-    
-    $result = mysqli_query($db,$total_pages_sql);
-    $total_rows = mysqli_fetch_array($result)[0];
-    $total_rows = $total_rows < 1? 1:$total_rows;
-    $total_pages = ceil($total_rows/$no_of_records_per_page);
-    $sql = "SELECT * FROM Profile where StpName Like '%{$sname}%' LIMIT $offset, $no_of_records_per_page";
-             $res_data = mysqli_query($db,$sql);
-            echo '
-                  <section class="admins">
-                    <div class="container-fluid">
-                    <div class="row">
-
-                     <h3>  &nbsp;&nbsp;&nbsp;BROWSE STARTUPS</h3>
-
-
-            ';
-            while($row = mysqli_fetch_array($res_data))
-            {
-                    echo '
-                      <div class="col-md-6">
-                      <div class="box">
-                            <div class="admin">
-                            <img src='.$row['StpImg'].' alt="John" style="width:25%">
-                            <h1>'.$row['StpName'].'</h1>
-                          <p class="title">'.$row['Type'].'</p>
-                          <p>'.$row['FName'].'</p>
-                           <p>'.$row['SName'].'</p>
-                          
-
-                            </div>
-                            </div>
-                            </div>';
-            }
-            echo '
-            </div>
-            </div>
-            </section>
-            ';
-            ?>
-
-<?php
-
-
-
-            echo '<div class="pages">';
-            echo '<ul class="pagination">';
-                echo '<li><a href="?pageno=1">First</a></li>';
-                echo '<li class=';
-                    if($pageno <= 1){ echo 'disabled'; };
-                        echo '>';
-                    echo '<a href=';
-                    if($pageno <= 1){ echo "#"; } else { echo "?pageno=".($pageno - 1); };
-                    echo '>Prev</a>';
-                echo '</li>';
-                echo '<li class=';
-                    if($pageno >= $total_pages){ echo 'disabled'; };
-                    echo '>';
-                    echo '<a href=';
-                    if($pageno >= $total_pages){ echo "#"; } else { echo "?pageno=".($pageno + 1); };
-                    echo '>Next</a>';
-                echo '</li>';
-                echo "<li><a href='?pageno=$total_pages'>Last</a></li>";
-            echo '</ul>';
-        echo '</div>';
-        ?>
-      </div>
-            ?>
-    </body>
-    </html>
