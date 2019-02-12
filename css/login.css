@@ -29,3 +29,7 @@ input[type=submit]{
     border: none;
     color: white;
 }
+
+input[type=submit]:hover{
+    opacity: 0.6;
+}

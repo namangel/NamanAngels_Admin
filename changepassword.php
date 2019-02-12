@@ -1,4 +1,42 @@
+<?php 
+    require 'server.php';
 
+    $u = $_SESSION['adminID'];
+    $qu = "SELECT * FROM admin WHERE adminID='$u'";
+    $results = mysqli_query($db, $qu);
+    $row = mysqli_fetch_assoc($results);
+    $Password = $row['Password'];
+
+	if(isset($_POST["changepw"]))
+	{
+        $curr_pw= mysqli_real_escape_string($db, $_POST['currentpassword']);
+        // $curr_pwd=sha1($curr_pw);
+        $pw_1 = mysqli_real_escape_string($db, $_POST['pw_1']);
+        $pw_2 = mysqli_real_escape_string($db, $_POST['pw_2']);
+        $error=0;       
+
+        if ($Password != $curr_pw) {
+            echo "<script>alert('Your Password is incorrect')</script>";
+            $error=$error+1;
+        }
+        if (strlen($pw_1) < 8) {
+            echo "<script>alert('Enter Password Greater than 8 Characters')</script>";
+            $error=$error+1;
+           }
+        if ($pw_1 != $pw_2) {
+            echo "<script>alert('The two passwords do not match')</script>";
+            $error=$error+1;
+        }
+        if ($error == 0){
+            // $pw=sha1($pw_1);
+            $pw=$pw_1;
+            $q = "UPDATE admin set Password='$pw' where adminID='$u';";
+			mysqli_query($db, $q);
+            echo "<script>alert('Password Changed Successfully')</script>";
+        }
+    }
+
+?>
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -197,15 +235,15 @@ margin-top:-60px;
                 CHANGE PASSWORD </div>
       <hr>
         <form method="post" action="changepassword.php">
-            <label for="current-password">Current Password*</label>
+            <label for="current-password">Current Password</label>
             <br>
             <input autocomplete="current-password" type="password" id="current-password" name="currentpassword" placeholder="Your current password..">
         <br>
-            <label for="new-password">Password*</label>
+            <label for="new-password">Password</label>
             <br>
             <input autocomplete="new-password" type="password" id="new-password" name="pw_1" placeholder="Your  new password..">
         <br>
-            <label for="confirm-password">Confirm Password*</label>
+            <label for="confirm-password">Confirm Password</label>
             <br>
             <input autocomplete="confirm-password" type="password" id="confirm-password" name="pw_2" placeholder="Confirm new password..">
         <br>
