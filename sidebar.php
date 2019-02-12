@@ -319,7 +319,7 @@ body {background-color: #2a2b3d;}
         </li>
         <li><i class="fa fa-address-book-o fa-fw"></i><a href="#"> View profiles</a>
           <ul class="side-nav-dropdown">
-            <li><a href="#">Startups</a></li>
+            <li><a href="viewstartup.php">Startups</a></li>
             <li><a href="#">Investors</a></li>
           </ul>
         </li>
