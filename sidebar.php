@@ -1,4 +1,15 @@
-<?php?>
+<?php
+  require "server.php";
+
+  $id = $_SESSION['adminID'];
+
+	$qu = "SELECT * FROM admin WHERE adminID = '$id'";
+	$results = mysqli_query($db, $qu);
+	$row = mysqli_fetch_assoc($results);
+	$AdminName = $row['AdminName'];
+  $AdminDesgn = $row['AdminDesgn'];
+  $ProfilePic = $row['ProfilePic']==""? 'img/default.png':$row['ProfilePic'];
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -8,286 +19,286 @@
     <link rel="stylesheet" href="css/sidebar.css">
     <style>
       * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Droid Sans', sans-serif;
-  outline: none;
-}
-::-webkit-scrollbar {
-  background: transparent;
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-body {background-color: #2a2b3d;}
-#contents {
-  position: relative;
-  transition: .3s;
-  margin-left: 290px;
-  background-color:#5c98f2;
-}
-
-/* Start side navigation bar  */
-
-.side-nav {
-  float: left;
-  height: 100%;
-  width: 290px;
-  background-color: #252636;
-  color: #CCC;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-  transition: .3s;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: auto;
-  z-index: 9999999
-}
-.side-nav .close-aside {
-  position: absolute;
-  top: 7px;
-  right: 7px;
-  cursor: pointer;
-  color: #EEE;
-}
-.side-nav .heading {
-  background-color: #252636;
-  padding: 15px 15px 15px 30px;
-  overflow: hidden;
-  border-bottom: 1px solid #2a2b3c
-}
-.side-nav .heading > img {
-  border-radius: 50%;
-  float: left;
-  width: 28%;
-}
-.side-nav .info {
-  float: left;
-  width: 69%;
-  margin-left: 3%;
-}
-.side-nav .heading .info > h3 {margin: 0 0 5px}
-.side-nav .heading .info > h3 > a {
-  color: #EEE;
-  font-weight: 100;
-  margin-top: 4px;
-  display: block;
-  text-decoration: none;
-  font-size: 18px;
-}
-.side-nav .heading .info > h3 > a:hover {
-  color: #FFF;
-}
-.side-nav .heading .info > p {
-  color: #BBB;
-  font-size: 13px;
-}
-/* End heading */
-/* Start search */
-.side-nav .search {
-  text-align: center;
-  padding: 15px 30px;
-  margin: 15px 0;
-  position: relative;
-}
-.side-nav .search > input {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #23262d;
-  padding: 7px 0 7px;
-  color: #DDD
-}
-.side-nav .search > input ~ i {
-  position: absolute;
-  top: 22px;
-  right: 40px;
-  display: block;
-  color: #2b2f3a;
-  font-size: 19px;
-}
-/* End search */
-
-.side-nav .categories > li {
-  padding: 17px 40px 17px 30px;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-  cursor: pointer;
-}
-.side-nav .categories > li > a {
-  color: #AAA;
-  text-decoration: none;
-}
-/* Start num: there are three options primary, danger and success like Bootstrap */
-.side-nav .categories > li > a > .num {
-  line-height: 0;
-  border-radius: 3px;
-  font-size: 14px;
-  color: #FFF;
-  padding: 0px 5px
-}
-.succ {background-color: #5cb85c}
-/* End num */
-.side-nav .categories > li > a:hover {
-  color: #FFF
-}
-.side-nav .categories > li > i {
-  font-size: 18px;
-  margin-right: 5px
-}
-.side-nav .categories > li > a:after {
-  content: "\f053";
-  font-family: fontAwesome;
-  font-size: 11px;
-  line-height: 1.8;
-  float: right;
-  color: #AAA;
-  transition: all .8s ease-in-out;
-}
-.side-nav .categories .opend > a:after {
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-/* End categories */
-/* Start dropdown menu */
-.side-nav .categories .side-nav-dropdown {
-  padding-top: 10px;
-  padding-left: 30px;
-  list-style: none;
-  display: none;
-}
-.side-nav .categories .side-nav-dropdown > li > a {
-  color: #AAA;
-  text-decoration: none;
-  padding: 7px 0;
-  display: block;
-}
-.side-nav .categories p {
-  margin-left: 30px;
-  color: #535465;
-  margin-top: 10px;
-}
-
-/* End dropdown menu */
-
-.show-side-nav {
-  -webkit-transform: translateX(-290px);
-  transform: translateX(-290px);
-}
-
-
-/* Start media query */
-@media (max-width: 767px) {
-  .side-nav .categories > li {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-  .side-nav .search {
-    padding: 10px 0 10px 30px
-  }
-}
-
-/* End side navigation bar  */
-
-.main-color {
-        color: #ffc107;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Droid Sans', sans-serif;
+      outline: none;
       }
-/* Start bootstrap */
-.navbar-right .dropdown-menu {
-  right: auto !important;
-  left: 0 !important;
-}
-.navbar-default {
-  background-color: #6f6486 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  margin: 0 !important
-}
-.navbar-default .navbar-nav>li>a {
-  color: #EEE !important;
-  line-height: 55px !important;
-  padding: 0 10px !important;
-}
-.navbar-default .navbar-brand {color:#FFF !important}
-.navbar-default .navbar-nav>li>a:focus,
-.navbar-default .navbar-nav>li>a:hover {color: #EEE !important}
+      ::-webkit-scrollbar {
+        background: transparent;
+        width: 5px;
+        height: 5px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #888;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      body {background-color: #2a2b3d;}
+      #contents {
+        position: relative;
+        transition: .3s;
+        margin-left: 290px;
+        background-color:#5c98f2;
+      }
 
-.navbar-default .navbar-nav>.open>a,
-.navbar-default .navbar-nav>.open>a:focus,
-.navbar-default .navbar-nav>.open>a:hover {background-color: transparent !important; color: #FFF !important}
+      /* Start side navigation bar  */
 
-.navbar-default .navbar-brand {line-height: 55px !important; padding: 0 !important}
-.navbar-default .navbar-brand:focus,
-.navbar-default .navbar-brand:hover {color: #FFF !important}
-.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin: 0 !important}
-@media (max-width: 767px) {
-  .navbar>.container-fluid .navbar-brand {
-    margin-left: 15px !important;
-  }
-  .navbar-default .navbar-nav>li>a {
-    padding-left: 0 !important;
-  }
-  .navbar-nav {
-    margin: 0 !important;
-  }
-  .navbar-default .navbar-collapse,
-  .navbar-default .navbar-form {
-    border: none !important;
-  }
+      .side-nav {
+        float: left;
+        height: 100%;
+        width: 290px;
+        background-color: #252636;
+        color: #CCC;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        transition: .3s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: auto;
+        z-index: 9999999
+      }
+      .side-nav .close-aside {
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        cursor: pointer;
+        color: #EEE;
+      }
+      .side-nav .heading {
+        background-color: #252636;
+        padding: 15px 15px 15px 30px;
+        overflow: hidden;
+        border-bottom: 1px solid #2a2b3c
+      }
+      .side-nav .heading > img {
+        border-radius: 50%;
+        float: left;
+        width: 28%;
+      }
+      .side-nav .info {
+        float: left;
+        width: 69%;
+        margin-left: 3%;
+      }
+      .side-nav .heading .info > h3 {margin: 0 0 5px}
+      .side-nav .heading .info > h3 > a {
+        color: #EEE;
+        font-weight: 100;
+        margin-top: 4px;
+        display: block;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      .side-nav .heading .info > h3 > a:hover {
+        color: #FFF;
+      }
+      .side-nav .heading .info > p {
+        color: #BBB;
+        font-size: 13px;
+      }
+      /* End heading */
+      /* Start search */
+      .side-nav .search {
+        text-align: center;
+        padding: 15px 30px;
+        margin: 15px 0;
+        position: relative;
+      }
+      .side-nav .search > input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #23262d;
+        padding: 7px 0 7px;
+        color: #DDD
+      }
+      .side-nav .search > input ~ i {
+        position: absolute;
+        top: 22px;
+        right: 40px;
+        display: block;
+        color: #2b2f3a;
+        font-size: 19px;
+      }
+      /* End search */
 
-}
+      .side-nav .categories > li {
+        padding: 17px 40px 17px 30px;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        cursor: pointer;
+      }
+      .side-nav .categories > li > a {
+        color: #AAA;
+        text-decoration: none;
+      }
+      /* Start num: there are three options primary, danger and success like Bootstrap */
+      .side-nav .categories > li > a > .num {
+        line-height: 0;
+        border-radius: 3px;
+        font-size: 14px;
+        color: #FFF;
+        padding: 0px 5px
+      }
+      .succ {background-color: #5cb85c}
+      /* End num */
+      .side-nav .categories > li > a:hover {
+        color: #FFF
+      }
+      .side-nav .categories > li > i {
+        font-size: 18px;
+        margin-right: 5px
+      }
+      .side-nav .categories > li > a:after {
+        content: "\f053";
+        font-family: fontAwesome;
+        font-size: 11px;
+        line-height: 1.8;
+        float: right;
+        color: #AAA;
+        transition: all .8s ease-in-out;
+      }
+      .side-nav .categories .opend > a:after {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+      }
+      /* End categories */
+      /* Start dropdown menu */
+      .side-nav .categories .side-nav-dropdown {
+        padding-top: 10px;
+        padding-left: 30px;
+        list-style: none;
+        display: none;
+      }
+      .side-nav .categories .side-nav-dropdown > li > a {
+        color: #AAA;
+        text-decoration: none;
+        padding: 7px 0;
+        display: block;
+      }
+      .side-nav .categories p {
+        margin-left: 30px;
+        color: #535465;
+        margin-top: 10px;
+      }
 
-.navbar-default .navbar-nav>li>a {
-  float: left !important;
-}
-.navbar-default .navbar-nav>li>a>span:not(.caret) {
-  background-color: #e74c3c !important;
-  border-radius: 50% !important;
-  height: 25px !important;
-  width: 25px !important;
-  padding: 2px !important;
-  font-size: 11px !important;
-  position: relative !important;
-  top: -10px !important;
-  right: 5px !important
-}
-.dropdown-menu>li>a {
-  padding-top: 5px !important;
-  padding-right: 5px !important;
-}
-.navbar-default .navbar-nav>li>a>i {
-  font-size: 18px !important;
-}
+      /* End dropdown menu */
 
-/* Start media query */
+      .show-side-nav {
+        -webkit-transform: translateX(-290px);
+        transform: translateX(-290px);
+      }
 
-@media (max-width: 767px) {
-  #contents {
-    margin: 0 !important
-  }
-  .statistics .box {
-    margin-bottom: 25px !important;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
-    color: #CCC !important
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
-    color: #FFF !important
-  }
-  .navbar-default .navbar-toggle{
-    border:none !important;
-    color: #EEE !important;
-    font-size: 18px !important;
-  }
-  .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {background-color: transparent !important}
-}
+
+      /* Start media query */
+      @media (max-width: 767px) {
+        .side-nav .categories > li {
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+        .side-nav .search {
+          padding: 10px 0 10px 30px
+        }
+      }
+
+      /* End side navigation bar  */
+
+      .main-color {
+              color: #ffc107;
+            }
+      /* Start bootstrap */
+      .navbar-right .dropdown-menu {
+        right: auto !important;
+        left: 0 !important;
+      }
+      .navbar-default {
+        background-color: #6f6486 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important
+      }
+      .navbar-default .navbar-nav>li>a {
+        color: #EEE !important;
+        line-height: 55px !important;
+        padding: 0 10px !important;
+      }
+      .navbar-default .navbar-brand {color:#FFF !important}
+      .navbar-default .navbar-nav>li>a:focus,
+      .navbar-default .navbar-nav>li>a:hover {color: #EEE !important}
+
+      .navbar-default .navbar-nav>.open>a,
+      .navbar-default .navbar-nav>.open>a:focus,
+      .navbar-default .navbar-nav>.open>a:hover {background-color: transparent !important; color: #FFF !important}
+
+      .navbar-default .navbar-brand {line-height: 55px !important; padding: 0 !important}
+      .navbar-default .navbar-brand:focus,
+      .navbar-default .navbar-brand:hover {color: #FFF !important}
+      .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin: 0 !important}
+      @media (max-width: 767px) {
+        .navbar>.container-fluid .navbar-brand {
+          margin-left: 15px !important;
+        }
+        .navbar-default .navbar-nav>li>a {
+          padding-left: 0 !important;
+        }
+        .navbar-nav {
+          margin: 0 !important;
+        }
+        .navbar-default .navbar-collapse,
+        .navbar-default .navbar-form {
+          border: none !important;
+        }
+
+      }
+
+      .navbar-default .navbar-nav>li>a {
+        float: left !important;
+      }
+      .navbar-default .navbar-nav>li>a>span:not(.caret) {
+        background-color: #e74c3c !important;
+        border-radius: 50% !important;
+        height: 25px !important;
+        width: 25px !important;
+        padding: 2px !important;
+        font-size: 11px !important;
+        position: relative !important;
+        top: -10px !important;
+        right: 5px !important
+      }
+      .dropdown-menu>li>a {
+        padding-top: 5px !important;
+        padding-right: 5px !important;
+      }
+      .navbar-default .navbar-nav>li>a>i {
+        font-size: 18px !important;
+      }
+
+      /* Start media query */
+
+      @media (max-width: 767px) {
+        #contents {
+          margin: 0 !important
+        }
+        .statistics .box {
+          margin-bottom: 25px !important;
+        }
+        .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+          color: #CCC !important
+        }
+        .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+          color: #FFF !important
+        }
+        .navbar-default .navbar-toggle{
+          border:none !important;
+          color: #EEE !important;
+          font-size: 18px !important;
+        }
+        .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {background-color: transparent !important}
+      }
     </style>
   </head>
   <body>
@@ -295,10 +306,10 @@ body {background-color: #2a2b3d;}
       <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
       <div class="heading">
         <h2>Naman Angels</h2><br>
-        <img src="img/ProfilePic.png" alt="No image">
+        <?= "<img src=".$ProfilePic." />";?>
         <div class="info">
-          <h3><a href="admin.php">Admin</a></h3>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
+          <h3><a href="admin.php"><?php echo $AdminName;?></a></h3>
+          <p><?php echo $AdminDesgn; ?></p>
         </div>
       </div>
       <!-- <div class="search">
@@ -307,10 +318,6 @@ body {background-color: #2a2b3d;}
       <ul class="categories">
       <li><i class="fa fa-dashboard fa-fw"></i><a href="dashboard.php"> Dashboard</span></a>
         </li>
-        <!-- <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="#"> About us</a>
-        </li>
-        <li><i class="fa fa-phone fa-fw"></i><a href="#"> Contact us</a>
-        </li> -->
         <li><i class="fa fa-users fa-fw"></i><a href="#"> Our team</a>
           <ul class="side-nav-dropdown">
             <li><a href="team.php">View team</a></li>
@@ -320,7 +327,7 @@ body {background-color: #2a2b3d;}
         <li><i class="fa fa-address-book-o fa-fw"></i><a href="#"> View profiles</a>
           <ul class="side-nav-dropdown">
             <li><a href="viewstartup.php">Startups</a></li>
-            <li><a href="#">Investors</a></li>
+            <li><a href="admin_browseinv.php">Investors</a></li>
           </ul>
         </li>
         <li><i class="fa fa-handshake-o fa-fw"></i><a href="transaction.php"> Deals </a></li>
@@ -346,7 +353,7 @@ body {background-color: #2a2b3d;}
                   <li><a href="changepassword.php"><i class="fa fa-lock fw"></i> Password</a></li>
                   <!-- <li><a href="#"><i class="fa fa-question-circle-o fw"></i> Help</a></li> -->
                   <li role="separator" class="divider"></li>
-                  <li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
+                  <li><a href="login.php"><i class="fa fa-sign-out"></i> Log out</a></li>
                 </ul>
               </li>
            <!--   <li><a href="#"><i class="fa fa-comments"></i><span>23</span></a></li>

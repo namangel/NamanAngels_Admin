@@ -1,4 +1,13 @@
-<?php?>
+<?php
+  require "server.php" ;
+  $q = "SELECT * FROM userstp;";
+	$results=mysqli_query($db, $q);
+  $startup=mysqli_num_rows($results);
+
+  $q1 = "SELECT * FROM userinv;";
+	$results=mysqli_query($db, $q1);
+  $investor=mysqli_num_rows($results);
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -192,14 +201,14 @@
             <div class="col-md-3">
               <div class="box danger">
                 <i class="fa fa-rocket"></i>
-                <h3>245</h3>
+                <h3><?php echo $startup ;?></h3>
                 <p class="lead">Startups registered</p>
               </div>
             </div>
             <div class="col-md-3">
               <div class="box warning">
                 <i class="fa fa-money"></i>
-                <h3>5,154</h3>
+                <h3><?php echo $investor ;?></h3>
                 <p class="lead">Investors registered</p>
               </div>
             </div>

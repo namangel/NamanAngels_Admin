@@ -1,4 +1,9 @@
-<?php require "server.php" ?>
+<?php require('server.php'); ?>
+<?if(isset($_POST['submit'])){
+        $_SESSION['search'] = mysqli_real_escape_string($db, $_POST['searchkey']);
+        header('location: viewstartup.php?pageno=1');
+    }
+    ?>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -18,9 +23,41 @@
       p{
           color:white;
       }
-      h1{
-          color:white;
-      }
+  .searchform select, .searchform input[type="text"]{
+    width: 80%;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top:10px;
+}
+.searchform input[type=submit] {
+    background-color: #FF8C00;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size:16px;
+    font-weight: bold;
+    padding: 10px;
+    width: 180px
+ }
+  .viewprofile{
+   display:block;
+  text-decoration:none;
+  color: #FF8C00;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+ 
+  
+}
+     img{
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+     }
       .cont{
         margin-left: 290px;
         z-index: -100;
@@ -69,6 +106,7 @@
         margin-top: 25px;
       }
       .admins .box {
+        width:50%;
 
       }
       .admins .box > h3 {
@@ -92,8 +130,8 @@
         border-radius: 50%;
       }
       .admins .box .info {
-        width: 70%;
-        color: #EEE;
+        width: 50%;
+        color: white;
         float: left;
       }
       .name{
@@ -178,6 +216,10 @@
     <body>
     <?php require "sidebar.php" ?>
     <div class="cont">
+    <form class="searchform" action="viewstartup.php" method="post">
+                <input type="text" name="searchkey" placeholder="Enter Keyword">
+                <input type="submit" name="submit" value="Search">
+            </form>
       <?php
       if (isset($_GET['pageno'])) {
         $pageno = $_GET['pageno'];
@@ -190,11 +232,8 @@
     
     $no_of_records_per_page = 3;
     $offset = ($pageno - 1) * $no_of_records_per_page;
-   
-    
-    
-    $total_pages_sql = "SELECT COUNT(*) FROM Profile where StpName LIKE '%{$sname}%'";
-    
+    $sname = $_SESSION['search'];
+   $total_pages_sql = "SELECT COUNT(*) FROM Profile where StpName LIKE '%{$sname}%'";
     $result = mysqli_query($db,$total_pages_sql);
     $total_rows = mysqli_fetch_array($result)[0];
     $total_rows = $total_rows < 1? 1:$total_rows;
@@ -206,7 +245,7 @@
                     <div class="container-fluid">
                     <div class="row">
 
-                     <h3>  &nbsp;&nbsp;&nbsp;BROWSE STARTUPS</h3>
+                     <h3 style="text-align:center;font-size:bold">  &nbsp;&nbsp;&nbsp;BROWSE STARTUPS</h3>
 
 
             ';
@@ -216,12 +255,13 @@
                       <div class="col-md-6">
                       <div class="box">
                             <div class="admin">
-                            <img src='.$row['StpImg'].' alt="John" style="width:25%">
-                            <h1>'.$row['StpName'].'</h1>
+                            <img src='.$row['StpImg'].' alt="John" style="width:30%; align:middle">
+                            <h1 style="color:#FF8C00;text-align:center">'.$row['StpName'].'</h1>
                           <p class="title">'.$row['Type'].'</p>
                           <p>'.$row['FName'].'</p>
                            <p>'.$row['SName'].'</p>
-                          
+                           <a href=../Profile/index.php?searchquery='.$row['StpID'].' target=_blank>
+                           <button type= submit name=subinv class=viewprofile value=View Profile action=index.php><h4>View Profile</h4></button></a>
 
                             </div>
                             </div>
